@@ -1,0 +1,37 @@
+@use '../05-mixins/_mixins'
+@use '../02-base/_variables'
+
+
+
+.header
+    width: 100%
+    color: variables.$gray
+    @include mixins.display
+    justify-content: space-between
+    padding: 0 2rem
+    height: 80px
+    align-items: center
+    z-index: 10
+    position: fixed
+    background-color: rgba(0,0,0,.7)
+    &-logo
+        font-size: 1.1rem
+        font-family: variables.$poppins
+        padding: 1rem .4rem
+    &-menu-container
+        
+        ul
+            @include mixins.display
+            filter: variables.$filter
+            li
+                font-family: variables.$poppins
+                text-transform: uppercase
+                padding: 1rem 
+                border-bottom: 2px solid transparent
+                transition: .5s ease-out
+                font-weight: 700
+                &:hover
+                    border-bottom: 2px solid variables.$indigo
+            
+
+    

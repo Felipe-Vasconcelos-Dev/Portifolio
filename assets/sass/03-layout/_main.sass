@@ -1,0 +1,96 @@
+@use '../05-mixins/_mixins'
+@use '../02-base/_variables'
+
+
+.banner
+    background-color: #000
+    &-container
+        
+        background-image: url('../img/perfil.jpeg')
+        background-repeat: no-repeat
+        background-position-x: 100%
+        background-size: 40%
+        height: 100%
+        width:  100vw
+        @include mixins.alinhar
+           
+        .banner-top
+            height: 85vh
+            width: 100vw
+            color: variables.$gray
+            @include mixins.display
+            flex-direction: column
+            align-items: flex-start
+            h1
+                font-size: 4rem
+                font-family: variables.$poppins
+        .banner-cards
+            @include mixins.alinhar
+            @include mixins.display
+            justify-content: space-around
+            .card
+                width: 30%
+                height: 350px
+                background-color: variables.$dark-secundary
+                transition: color 1s ease-in-out, box-shadow .3s ease-in-out
+                box-shadow:  variables.$shadow
+                @include mixins.display
+                flex-direction: column
+                align-items:  flex-start
+                padding: 1.2rem
+                transition: 2s
+                &:hover
+                    color: variables.$gray
+                    filter: drop-shadow(0px 0px 15px variables.$indigo)
+                    box-shadow:  inset 350px 0 0 variables.$indigo
+                    transform: translateY(-30px)
+                &-content
+                    p
+                        padding-top: 1rem
+                .foto
+                    width: 100%
+                    height: 200px
+                    @include mixins.display
+                    transition: 1s
+                    &-1
+                        @include mixins.image('../img/html.png')
+                        background-size: 55%
+                    &-2
+                        @include mixins.image('../img/css.png')
+                        background-size: 40%
+                    &-3
+                        @include mixins.image('../img/js.png')
+                        background-size: 90%
+                    &:hover
+                        filter: grayscale(0%)
+                        transform: translateY(20px)
+                            
+.projetos
+    background-color: variables.$dark-secundary
+    &-container
+        @include mixins.alinhar
+        p
+            color: variables.$indigo
+            font-size: 1.2rem   
+        .lista-projetos
+            padding: 2rem 0
+            @include mixins.display
+            flex-wrap: wrap
+            a
+                width: 30%
+                height: 200px
+                margin: 1rem
+                border: 1px solid variables.$indigo
+                @include mixins.display
+                box-shadow:   -8px 0 0 transparent
+                transition: 1s
+                &:hover
+                    box-shadow:   -3px 0 0 variables.$yellow
+                    filter: drop-shadow(0px 0px 15px variables.$yellow)
+
+                         
+            
+        
+
+                        
+                    

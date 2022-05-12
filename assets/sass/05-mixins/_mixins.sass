@@ -1,0 +1,22 @@
+@use '../02-base/_variables'
+
+
+
+@mixin display
+    display: flex
+    justify-content: center
+    align-items: center
+@mixin alinhar
+    max-width: variables.$width-container
+    margin: 0 auto
+            
+
+@mixin image($url)  
+    background-image: url($url)
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    height: 100%
+
+
+    
