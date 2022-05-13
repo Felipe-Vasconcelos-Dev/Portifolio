@@ -59,12 +59,7 @@ a {
   background-color: #000;
 }
 .banner-container {
-  background-image: url("../img/perfil.jpeg");
-  background-repeat: no-repeat;
-  background-position-x: 100%;
-  background-size: 40%;
-  height: 100%;
-  width: 100vw;
+  padding-bottom: 2rem;
   max-width: 1170px;
   margin: 0 auto;
 }
@@ -120,13 +115,13 @@ a {
   justify-content: center;
   align-items: center;
   transition: 1s;
+  filter: grayscale(80%);
 }
 .banner-container .banner-cards .card .foto-1 {
   background-image: url("../img/html.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
   background-size: 55%;
 }
 .banner-container .banner-cards .card .foto-2 {
@@ -134,7 +129,6 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
   background-size: 40%;
 }
 .banner-container .banner-cards .card .foto-3 {
@@ -142,7 +136,6 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
   background-size: 90%;
 }
 .banner-container .banner-cards .card .foto:hover {
@@ -153,7 +146,7 @@ a {
 .projetos {
   background-color: #1C1F22;
 }
-.projetos-container {
+.projetos-container .topo {
   max-width: 1170px;
   margin: 0 auto;
 }
@@ -162,13 +155,12 @@ a {
   font-size: 1.2rem;
 }
 .projetos-container .lista-projetos {
-  padding: 2rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
-.projetos-container .lista-projetos a {
+.projetos-container .lista-projetos .item {
   width: 30%;
   height: 200px;
   margin: 1rem;
@@ -177,11 +169,101 @@ a {
   justify-content: center;
   align-items: center;
   box-shadow: -8px 0 0 transparent;
-  transition: 1s;
+  transition: 1.5s;
+  padding: 0;
 }
-.projetos-container .lista-projetos a:hover {
-  box-shadow: -3px 0 0 #ffc107;
-  filter: drop-shadow(0px 0px 15px #ffc107);
+.projetos-container .lista-projetos .item:hover {
+  box-shadow: -3px 0 0 #6610f2;
+  filter: drop-shadow(0px 0px 5px #6610f2);
+  transform: translateY(-10px);
+}
+.projetos-container .lista-projetos .item:hover .item-cover {
+  background-color: rgba(0, 0, 0, 0.9176470588);
+}
+.projetos-container .lista-projetos .item:hover .item-cover h2, .projetos-container .lista-projetos .item:hover .item-cover p {
+  transition: 1s;
+  color: #ebe3e3;
+}
+.projetos-container .lista-projetos .item:hover .item-cover i {
+  color: #ffc107;
+}
+.projetos-container .lista-projetos .item-cover {
+  width: 100%;
+  height: 200px;
+  transition: 1s;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.projetos-container .lista-projetos .item-cover h2, .projetos-container .lista-projetos .item-cover p, .projetos-container .lista-projetos .item-cover i {
+  color: transparent;
+  transition: 1.2s;
+}
+.projetos-container .lista-projetos .item-cover p {
+  font-size: 0.9rem;
+  padding: 1rem 0;
+}
+.projetos-container .lista-projetos .item-cover i {
+  font-size: 1.3rem;
+}
+.projetos-container .lista-projetos .item-1 {
+  background-image: url("../img/electrum.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+}
+.projetos-container .lista-projetos .item-2 {
+  background-image: url("../img/barbeiro.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+}
+.projetos-container .lista-projetos .item-3 {
+  background-image: url("../img/poise.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+}
+.projetos-container .lista-projetos .item-4 {
+  background-image: url("../img/games.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+}
+.projetos-container .lista-projetos .item-5 {
+  background-image: url("../img/pizzaria integrale.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+}
+.projetos-container .lista-projetos .item-6 {
+  background-image: url("../img/combo+.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+}
+.projetos-container .lista-projetos .item-7 {
+  background-image: url("../img/paraiso.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+}
+.projetos-container .lista-projetos .item-8 {
+  background-image: url("../img/moxila-alura.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
 }
 
 .btn {

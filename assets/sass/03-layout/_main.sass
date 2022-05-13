@@ -5,13 +5,8 @@
 .banner
     background-color: #000
     &-container
+        padding-bottom: 2rem
         
-        background-image: url('../img/perfil.jpeg')
-        background-repeat: no-repeat
-        background-position-x: 100%
-        background-size: 40%
-        height: 100%
-        width:  100vw
         @include mixins.alinhar
            
         .banner-top
@@ -52,6 +47,7 @@
                     height: 200px
                     @include mixins.display
                     transition: 1s
+                    filter: grayscale(80%)
                     &-1
                         @include mixins.image('../img/html.png')
                         background-size: 55%
@@ -68,26 +64,80 @@
 .projetos
     background-color: variables.$dark-secundary
     &-container
-        @include mixins.alinhar
+        .topo
+            @include mixins.alinhar
+            
         p
             color: variables.$indigo
             font-size: 1.2rem   
+
         .lista-projetos
-            padding: 2rem 0
             @include mixins.display
             flex-wrap: wrap
-            a
+            .item
                 width: 30%
                 height: 200px
                 margin: 1rem
                 border: 1px solid variables.$indigo
                 @include mixins.display
-                box-shadow:   -8px 0 0 transparent
-                transition: 1s
+                box-shadow: -8px 0 0 transparent
+                transition: 1.5s
+                padding: 0
                 &:hover
-                    box-shadow:   -3px 0 0 variables.$yellow
-                    filter: drop-shadow(0px 0px 15px variables.$yellow)
+                    box-shadow:   -3px 0 0 variables.$indigo
+                    filter: drop-shadow(0px 0px 5px variables.$indigo)
+                    transform: translateY(-10px)
+                    .item-cover
+                        background-color: #000000ea
+                        h2, p 
+                            transition: 1s
+                            color: variables.$gray
+                        i
+                            color: variables.$yellow  
 
+
+                &-cover
+                    width: 100%
+                    height: 200px
+                    transition: 1s
+                    padding: 1rem
+                    @include mixins.display
+                    flex-direction: column
+                    align-items: flex-start
+                    h2 , p, i
+                        color: transparent
+                        transition: 1.2s
+                    p
+                        font-size:  .9rem   
+                        padding: 1rem 0
+                    i
+                        font-size: 1.3rem  
+                          
+                &-1
+                   @include mixins.image("../img/electrum.png")
+                   height: 200px
+                &-2
+                   @include mixins.image("../img/barbeiro.png")
+                   height: 200px
+                &-3
+                   @include mixins.image("../img/poise.png")
+                   height: 200px
+                &-4
+                   @include mixins.image("../img/games.png")
+                   height: 200px
+                &-5
+                   @include mixins.image("../img/pizzaria integrale.png")
+                   height: 200px
+                &-6
+                   @include mixins.image("../img/combo+.png")
+                   height: 200px
+                &-7
+                   @include mixins.image("../img/paraiso.png")    
+                   height: 200px
+                &-8
+                   @include mixins.image("../img/moxila-alura.png")      
+                   height: 200px
+                    
                          
             
         
