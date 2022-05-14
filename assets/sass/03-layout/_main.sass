@@ -93,8 +93,29 @@
                             transition: 1s
                             color: variables.$gray
                         i
-                            color: variables.$yellow  
+                            color: variables.$gray
+                            padding: 0 5px 
+                        
+                        .icones
+                            @include mixins.display
+                            align-items: center
+                            
+                            .github
+                                color: variables.$gray
+                                font-size: 24px
+                                width: 30px
+                            
+                            .small
+                                color: variables.$gray
+                                font-size: 14px
+                                padding: 0 5px
+                            a
+                                @include mixins.display
 
+                            .git
+                                padding-left: 9px    
+                                    
+                                   
 
                 &-cover
                     width: 100%
@@ -104,7 +125,7 @@
                     @include mixins.display
                     flex-direction: column
                     align-items: flex-start
-                    h2 , p, i
+                    h2 , p, i , small
                         color: transparent
                         transition: 1.2s
                     p
@@ -112,6 +133,10 @@
                         padding: 1rem 0
                     i
                         font-size: 1.3rem  
+                    .small , git
+                        color: transparent
+
+
                           
                 &-1
                    @include mixins.image("../img/electrum.png")
