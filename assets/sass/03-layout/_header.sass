@@ -11,15 +11,30 @@
     padding: 0 2rem
     height: 80px
     align-items: center
-    z-index: 10
-    position: fixed
     background-color: rgba(0,0,0,.7)
+    
+    &-lateral
+        position: relative
+        ul
+            position: absolute
+            height: 80vh
+            width: 80vw
+            z-index: 10
+            
+
+            a
+                li
+                    color: #000    
+
     &-logo
         font-size: 1.1rem
         font-family: variables.$poppins
         padding: 1rem .4rem
     &-menu-container
-        
+        @include mixins.mobile
+            display: none
+    
+       
         ul
             @include mixins.display
             filter: variables.$filter

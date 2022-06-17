@@ -11,35 +11,74 @@
            
         .banner-top
             height: 85vh
-            width: 100vw
+            width: 100%
             color: variables.$gray
             @include mixins.display
             flex-direction: column
-            align-items: flex-start
+            text-align: center
+            .btn
+                margin: 4rem 0 
+                padding: 2rem
+            @include mixins.mobile
+                width: 100vw
+                height: 90vh
+                .btn
+                    margin: 4rem 0 
+                    padding: 1rem
+            .perfil
+                height: 300px
+                width:  300px
+                border-radius: 50%
+                margin: 0 auto
+                background-image: url('../img/perfil.jpeg')
+                background-position: center
+                background-repeat: no-repeat
+                background-size: cover
+                margin: 3rem
             h1
                 font-size: 4rem
                 font-family: variables.$poppins
+                @include mixins.mobile
+                    font-size: 2rem
+                    width: 100%
+                    margin: 0 auto
+                    padding:1.5rem 0 0 0
+                    
         .banner-cards
             @include mixins.alinhar
             @include mixins.display
             justify-content: space-around
+            @include mixins.mobile
+                flex-direction: column
+                width:90%
+                
+                
             .card
                 width: 30%
-                height: 350px
+                height: 360px
                 background-color: variables.$dark-secundary
                 transition: color 1s ease-in-out, box-shadow .3s ease-in-out
                 box-shadow:  variables.$shadow
                 @include mixins.display
                 flex-direction: column
                 align-items:  flex-start
-                padding: 1.2rem
+                padding: 1rem
                 transition: 2s
+                @include mixins.mobile
+                    width: 100%
+                    color: variables.$gray
+                    filter: drop-shadow(0px 0px 15px variables.$indigo)
+                    box-shadow:  inset 350px 0 0 variables.$indigo
+                    transform: translateY(-30px)
+                    margin-bottom: 1.5rem
+
                 &:hover
                     color: variables.$gray
                     filter: drop-shadow(0px 0px 15px variables.$indigo)
                     box-shadow:  inset 350px 0 0 variables.$indigo
                     transform: translateY(-30px)
                 &-content
+                    text-align: center
                     p
                         padding-top: 1rem
                 .foto
@@ -51,44 +90,105 @@
                     &-1
                         @include mixins.image('../img/html.png')
                         background-size: 55%
+                        @include mixins.mobile
+                            background-size: 60%
+
                     &-2
                         @include mixins.image('../img/css.png')
                         background-size: 40%
+                        @include mixins.mobile
+                            background-size: 40%
+                           
                     &-3
                         @include mixins.image('../img/js.png')
                         background-size: 90%
+                        @include mixins.mobile
+                            background-size: 100%
                     &:hover
                         filter: grayscale(0%)
                         transform: translateY(20px)
                             
 .projetos
     background-color: variables.$dark-secundary
+    padding: 1rem 
+    text-align: center
+    
     &-container
         .topo
             @include mixins.alinhar
             
         p
             color: variables.$indigo
-            font-size: 1.2rem   
+            font-size: 1.5rem 
+            margin: 0 auto
+            padding: 1rem 0  
 
         .lista-projetos
             @include mixins.display
             flex-wrap: wrap
+            @include mixins.mobile
+                flex-direction: column
+                height: auto
+                  
             .item
                 width: 30%
-                height: 200px
-                margin: 1rem
+                height: 300px
                 border: 1px solid variables.$indigo
                 @include mixins.display
                 box-shadow: -8px 0 0 transparent
                 transition: 1.5s
                 padding: 0
-                &:hover
+                margin: 1rem
+                
+                @include mixins.mobile
+                    width: 90%  
+                    height: 250px
                     box-shadow:   -3px 0 0 variables.$indigo
+                    filter: drop-shadow(0px 0px 5px variables.$indigo)
+                    margin-bottom: 50px 0
+                    
+                    
+                    .item-cover
+                        background-color: #000000c8
+                        height: 250px
+                        width: 100%
+                        @include mixins.mobile
+                            @include mixins.display
+                            
+                        
+                        h2, p 
+                            transition: 1s
+                            color: variables.$gray
+                        i
+                            color: variables.$gray
+                            padding: 0 5px 
+                        
+                        .icones
+                            @include mixins.display
+                            align-items: center
+                            
+                            .github
+                                color: variables.$gray
+                                font-size: 24px
+                                width: 30px
+                            
+                            .small
+                                color: variables.$gray
+                                font-size: 14px
+                                padding: 0 5px
+                            a
+                                @include mixins.display
+
+                            .git
+                                padding-left: 9px    
+                        
+                &:hover
+                    box-shadow: -3px 0 0 variables.$indigo
                     filter: drop-shadow(0px 0px 5px variables.$indigo)
                     transform: translateY(-10px)
                     .item-cover
-                        background-color: #000000ea
+                        background-color: #000000c1
+                        width: 100%
                         h2, p 
                             transition: 1s
                             color: variables.$gray
@@ -119,12 +219,15 @@
 
                 &-cover
                     width: 100%
-                    height: 200px
+                    height: 250px
                     transition: 1s
                     padding: 1rem
                     @include mixins.display
                     flex-direction: column
                     align-items: flex-start
+                    @include mixins.mobile
+                        padding: 1rem
+                        height: 198px
                     h2 , p, i , small
                         color: transparent
                         transition: 1.2s
@@ -133,35 +236,35 @@
                         padding: 1rem 0
                     i
                         font-size: 1.3rem  
-                    .small , git
+                    .small , .git
                         color: transparent
 
 
                           
                 &-1
                    @include mixins.image("../img/electrum.png")
-                   height: 200px
+                   height: 250px
                 &-2
                    @include mixins.image("../img/barbeiro.png")
-                   height: 200px
+                   height: 250px
                 &-3
                    @include mixins.image("../img/poise.png")
-                   height: 200px
+                   height: 250px
                 &-4
                    @include mixins.image("../img/games.png")
-                   height: 200px
+                   height: 250px
                 &-5
                    @include mixins.image("../img/pizzaria integrale.png")
-                   height: 200px
+                   height: 250px
                 &-6
                    @include mixins.image("../img/combo+.png")
-                   height: 200px
+                   height: 250px
                 &-7
                    @include mixins.image("../img/paraiso.png")    
-                   height: 200px
+                   height: 250px
                 &-8
                    @include mixins.image("../img/moxila-alura.png")      
-                   height: 200px
+                   height: 250px
                     
                          
             
